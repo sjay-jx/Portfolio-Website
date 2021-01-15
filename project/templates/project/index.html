@@ -194,6 +194,25 @@ and a proud team player focused on achieving project objectives with speed and a
     </section>
 
     <hr class="m-0">
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+      <div class="w-100">
+        <h2 class="mb-5">Projects</h2>
+          <div class="row">
+  {% for item in projects %}
+        <div class="card" style="width: 18rem;">
+        <a href="{{ item.get_absolute_url }}"><img class="card-img-top" src="{{ item.image.url }}" alt="Card image cap"></a>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <p class="card-text">{{ item.description|truncatechars:50 }}</p>
+          {% if item.url %}
+          <a href="{{ item.url }}" class="btn btn-primary">Check website</a>
+          {% endif %}
+        </div>
+      </div>
+  {% endfor %}
+</div>
+      </div>
+    </section>
   </div>
 
   <!-- Bootstrap core JavaScript -->
